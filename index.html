@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Gamer sign-up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Crea tu perfil de jugador en NEONCORE.">
+<title>Registro | NEONCORE</title>
+<link rel="stylesheet" href="styles.css">
+
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <svg hidden xmlns="http://www.w3.org/2000/svg"><symbol id="core" viewBox="0 0 100 100"><path d="M50 5 89 27v46L50 95 11 73V27Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M58 19 29 55h19l-6 26 29-38H52Z" fill="currentColor"/></symbol><symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.7-6.5 10-6.5S22 12 22 12s-3.7 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.7"/></symbol></svg>
+<header class="mast"><div class="shell"><div class="brand"><svg aria-hidden="true"><use href="#core"/></svg>NEONCORE</div><span class="online">Red en línea</span></div></header>
+<main class="shell">
+<div class="intro"><p class="eyebrow">Red competitiva NEONCORE</p><h1>Registro de operador</h1><p>Crea tu perfil de jugador para entrar a la red.</p></div>
+<div class="layout">
+<section class="panel" aria-labelledby="form-title"><h2 class="panel-label" id="form-title">Datos de registro <span aria-hidden="true">[ REG ]</span></h2>
+<form id="register" novalidate><fieldset id="fields">
+<div class="field"><label for="alias">Alias de jugador</label><div class="control"><input id="alias" name="alias" required autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="Ej. NeonRunner" aria-describedby="alias-hint alias-error"><span class="valid" aria-hidden="true" hidden>✓</span></div><p class="hint" id="alias-hint">De 3 a 20 caracteres. Usa letras, números, _ o -.</p><p class="error" id="alias-error" aria-live="polite"></p></div>
+<div class="field"><label for="email">Correo electrónico</label><div class="control"><input id="email" name="email" type="email" required autocomplete="email" placeholder="jugador@ejemplo.com" aria-describedby="email-error"><span class="valid" aria-hidden="true" hidden>✓</span></div><p class="error" id="email-error" aria-live="polite"></p></div>
+<div class="field"><label for="password">Contraseña</label><div class="control secret"><input id="password" name="password" type="password" required autocomplete="new-password" placeholder="Introduce tu contraseña" aria-describedby="password-hint password-error strength-label caps-password"><span class="valid" aria-hidden="true" hidden>✓</span><button class="eye" type="button" aria-label="Mostrar u ocultar contraseña" aria-controls="password" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#eye"/><path class="slash" d="m3 3 18 18"/></svg></button></div><div class="meter" id="strength" hidden><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="strength-label"></span></div><p class="hint" id="password-hint">Mínimo 8 caracteres.</p><p class="hint" id="caps-password" role="status"></p><p class="error" id="password-error" aria-live="polite"></p></div>
+<div class="field"><label for="confirm">Confirmar contraseña</label><div class="control secret"><input id="confirm" name="confirm" type="password" required autocomplete="new-password" placeholder="Repite tu contraseña" aria-describedby="confirm-error caps-confirm"><span class="valid" aria-hidden="true" hidden>✓</span><button class="eye" type="button" aria-label="Mostrar u ocultar confirmación de contraseña" aria-controls="confirm" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#eye"/><path class="slash" d="m3 3 18 18"/></svg></button></div><p class="hint" id="caps-confirm" role="status"></p><p class="error" id="confirm-error" aria-live="polite"></p></div>
+<div class="terms"><input id="terms" type="checkbox" required aria-describedby="terms-error"><label for="terms">Acepto los términos y condiciones</label><button id="show-terms" type="button">Leer términos</button></div><p class="error" id="terms-error" aria-live="polite"></p>
+<button id="submit" class="submit" type="submit"><span id="submit-label">Crear cuenta_</span><span class="arrow" aria-hidden="true">→</span></button>
+</fieldset><p id="summary" class="summary" role="alert"></p></form>
+<div id="result" class="success" hidden><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 89 27v46L50 95 11 73V27Z M31 50l13 13 26-27" fill="none" stroke="currentColor" stroke-width="4"/></svg><p class="eyebrow">Transmisión completada</p><h2 id="success-title" tabindex="-1">Registro exitoso</h2><p id="success-message"></p></div>
+<p id="status" class="sr" role="status"></p><p id="strength-status" class="sr" role="status"></p>
+</section>
+<aside class="panel operator" aria-labelledby="operator-title"><h2 class="panel-label" id="operator-title">Operator ID <span aria-hidden="true">[ ID ]</span></h2><div class="operator-body"><div class="emblem"><svg aria-hidden="true" viewBox="0 0 100 100"><use href="#core"/></svg></div><p class="id-row"><small>Alias</small><strong id="id-alias">Pendiente</strong></p><p class="id-row"><small>Correo</small><strong id="id-email">Pendiente</strong></p><p class="id-row"><small>Contraseña</small><strong id="id-password">Pendiente</strong></p><p class="id-row"><small>Confirmación</small><strong id="id-confirm">Pendiente</strong></p><p class="id-row"><small>Términos</small><strong id="id-terms">Pendiente</strong></p><p id="protocol" class="protocol">En espera de registro</p></div></aside>
+</div>
+</main>
+<footer class="footer"><div class="shell"><span>NEONCORE</span><span>Red de videojuegos competitivos</span></div></footer>
+<dialog id="terms-dialog" aria-labelledby="terms-title"><h2 id="terms-title">Términos y condiciones</h2><p>Este formulario es una demostración de registro. Los datos permanecen en esta página durante la prueba y el envío es simulado.</p><form method="dialog" style="padding:0"><button class="close" autofocus>Cerrar términos</button></form></dialog>
+<script src="app.js"></script>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
